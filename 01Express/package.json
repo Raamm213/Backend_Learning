@@ -11,9 +11,10 @@
   "main": "index.js",
   "scripts": {
     "po": "node index.js",
-    "nodemon":"nodemon index.js"
+    "nodemon": "nodemon index.js"
   },
   "dependencies": {
+    "dotenv": "^17.2.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
