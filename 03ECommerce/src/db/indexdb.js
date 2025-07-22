@@ -7,7 +7,7 @@ const indexdb = async () => {
     const connecturl = await mongoose.connect(
       `${process.env.MONGODBURL}/${DB_NAME}`
     );
-    console.log(connecturl.Schema.ObjectId)
+    console.log("db connection successfull!")
   } catch (error) {
     console.log(error);
     process.exit(1);

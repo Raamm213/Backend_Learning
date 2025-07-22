@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 const userSchema = new Schema(
   {
     username: {
-      type: string,
+      type: String,
       required: true,
       unique: true,
       lowercase: true,
@@ -13,55 +13,51 @@ const userSchema = new Schema(
       index: true,
     },
     email: {
-      type: string,
+      type: String,
       required: true,
       unique: true,
       lowercase: true,
       trim: true,
     },
-    fullName: {
-      type: string,
+    fullname: {
+      type: String,
       required: true,
       unique: true,
       trim: true,
     },
     avatar: {
-      type: string,
+      type: String,
       required: true,
     },
     coverImage: {
-      type: string,
+      type: String,
       required: true,
     },
-    watcHistory: {
-      type: Schema.Types.ObjectId,
-      ref: 'Video',
-    },
-    watcHistory: [
+    watchHistory: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Video',
       },
     ],
-    passward: {
-      type: string,
+    password: {
+      type: String,
       required: [true, 'Password is required'],
     },
     refreshToken: {
-      type: string,
+      type: String,
     },
   },
   { timestamps: true }
 );
 
 userSchema.pre('save', async function (next) {
-  if (!this.modified('password')) return next();
-  this.passward =await bcrypt.hash(this.passward, 10);
+  if (!this.isModified('password')) return next();
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
-userSchema.methods.isPasswordCorrect = async function (passord) {
-  return await bcrypt.compare(passord, this.password);
+userSchema.methods.isPasswordCorrect = async function (password) {
+  return await bcrypt.compare(password, this.password);
 };
 
 userSchema.methods.generateAccessToken = function () {

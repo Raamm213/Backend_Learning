@@ -4,6 +4,5 @@ import { get } from 'mongoose';
 
 const router = Router();
 
-router.get('/', healthcheck);
 router.route('/').get(healthcheck);
 export default router;
