@@ -9,11 +9,11 @@ routerUser.post(
   upload.fields([
     {
       name: 'avatar',
-      count: 1,
+      maxCount: 1,
     },
     {
       name: 'coverImage',
-      count: 1,
+      maxCount: 1,
     },
   ]),
   registerUser

@@ -3,6 +3,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
+import { Router } from 'express';
+import { registerUser } from '../controllers/user.controller.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const storage = multer.diskStorage({
@@ -26,3 +28,15 @@ const storage = multer.diskStorage({
 export const upload = multer({
   storage,
 });
+
+// const router = Router();
+
+// // For multiple file fields:
+// router.post(
+//   '/register',
+//   upload.fields([
+//     { name: 'avatar', maxCount: 1 },
+//     { name: 'coverImage', maxCount: 1 },
+//   ]),
+//   registerUser
+// );
