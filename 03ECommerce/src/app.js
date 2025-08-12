@@ -5,6 +5,8 @@ import { healthcheck } from './controllers/healthcheck.controller.js';
 import cookieParser from 'cookie-parser'
 import routerUser from './routes/user.routes.js';
 import { registerUser } from './controllers/user.controller.js';
+import routerComment from './routes/comment.routes.js';
+
 const app = express();
 
 app.get(
@@ -22,10 +24,13 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 
-// Importing the routes for our need
+// health check api groups 
 app.get("/api/v1/healthcheck", healthcheck);
-// Mount user routes
+// user activity api groups 
 app.use("/api/v1/users", routerUser);
+//comment api groups 
+app.use("/api/v1/comments",routerComment);
+
 
 export { app };
 

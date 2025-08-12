@@ -1,13 +1,13 @@
 import { asynchandler } from '../utils/asynchandler.js';
 import { apiError } from '../utils/apiError.js';
+import { apiResponse } from '../utils/apiResponse.js';
 import { User } from '../models/user.models.js';
+import mongoose from 'mongoose';
 import {
   uploadOnCloudinary,
   deleteFromCloudinary,
 } from '../utils/cloudinary.js';
-import { apiResponse } from '../utils/apiResponse.js';
 import jwt from 'jsonwebtoken';
-import mongoose from 'mongoose';
 
 const registerUser = asynchandler(async (req, res) => {
   if (!req.body) {

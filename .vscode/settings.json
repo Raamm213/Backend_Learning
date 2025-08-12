@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "[!0]*/**": true,
+        "0[!3]*/**": true,
+        "03[!E]*/**": true,
+        "03E[!C]*/**": true,
+        "03EC[!o]*/**": true,
+        "03ECo[!m]*/**": true,
+        "03ECom[!m]*/**": true,
+        "03EComm[!e]*/**": true,
+        "03EComme[!r]*/**": true,
+        "03ECommer[!c]*/**": true,
+        "03ECommerc[!e]*/**": true
+    }
+}

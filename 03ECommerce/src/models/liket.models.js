@@ -1,4 +1,4 @@
-import mongoose from "mongoose";  
+import mongoose from 'mongoose';
 
 const likeSchema = new Schema(
   {
@@ -10,4 +10,4 @@ const likeSchema = new Schema(
   { timestamps: true }
 );
 
-export const Like = mongoose.model("Like",likeSchema)
+export const Like = mongoose.model('Like', likeSchema);
