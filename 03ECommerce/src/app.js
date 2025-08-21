@@ -6,7 +6,8 @@ import cookieParser from 'cookie-parser';
 import routerUser from './routes/user.routes.js';
 // import { registerUser } from './controllers/user.controller.js';
 import routerComment from './routes/comment.routes.js';
-import RouterLike from './routes/like.routes.js';
+import routerLike from './routes/like.routes.js';
+import routerPlaylist from './routes/playlist.routes.js';
 
 const app = express();
 
@@ -32,8 +33,9 @@ app.use('/api/v1/users', routerUser);
 //comment api groups
 app.use('/api/v1/comments', routerComment);
 //like api groups
-app.use('/api/v1/likes', RouterLike);
-
+app.use('/api/v1/likes', routerLike);
+//playlist api groups
+app.use('/api/v1/playlists', routerPlaylist)
 
 
 
