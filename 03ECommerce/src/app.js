@@ -8,6 +8,7 @@ import routerUser from './routes/user.routes.js';
 import routerComment from './routes/comment.routes.js';
 import routerLike from './routes/like.routes.js';
 import routerPlaylist from './routes/playlist.routes.js';
+import routerSubscription from './routes/subscription.routes.js';
 
 const app = express();
 
@@ -35,7 +36,9 @@ app.use('/api/v1/comments', routerComment);
 //like api groups
 app.use('/api/v1/likes', routerLike);
 //playlist api groups
-app.use('/api/v1/playlists', routerPlaylist)
+app.use('/api/v1/playlists', routerPlaylist);
+//subscriptions api group 
+app.use('/api/v1/subscriptions', routerSubscription);
 
 
 
