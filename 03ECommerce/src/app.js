@@ -10,6 +10,7 @@ import routerLike from './routes/like.routes.js';
 import routerPlaylist from './routes/playlist.routes.js';
 import routerSubscription from './routes/subscription.routes.js';
 import routerTweet from './routes/tweet.routes.js';
+import routerVideo from './routes/video.routes.js';
 
 const app = express();
 
@@ -26,11 +27,9 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 app.use(express.static('public'));
 app.use(cookieParser());
 
-
-
 // health check api groups
 app.get('/api/v1/healthcheck', healthcheck);
-// user activity api groups
+// user activity api groupsu
 app.use('/api/v1/users', routerUser);
 //comment api groups
 app.use('/api/v1/comments', routerComment);
@@ -38,11 +37,11 @@ app.use('/api/v1/comments', routerComment);
 app.use('/api/v1/likes', routerLike);
 //playlist api groups
 app.use('/api/v1/playlists', routerPlaylist);
-//subscriptions api group 
+//subscriptions api group
 app.use('/api/v1/subscriptions', routerSubscription);
 //tweet api routes
-app.use('/api/v1/tweets', routerTweet)
-
-
+app.use('/api/v1/tweets', routerTweet);
+//video api routes
+app.use('/api/v1/videos', routerVideo);
 
 export { app };
