@@ -5,7 +5,6 @@ import { Comment } from '../models/comment.models.js';
 import { validateObjectId } from '../utils/validation.js';
 
 const createComment = asynchandler(async (req, res) => {
-  //TODO HAVE TO CREATE THE CODE TO CREATE THE COMMENT
   const { content, video } = req.body;
 
   if (!content || !video) {
@@ -36,7 +35,6 @@ const createComment = asynchandler(async (req, res) => {
 });
 
 const getCommentById = asynchandler(async (req, res) => {
-  //TODO HAVE TO CREATE THE CODE THAT CAN RETRIEVE THE COMMENT BY ITS ID
   const { id } = req.params;
 
   if (!id) {
@@ -68,7 +66,6 @@ const getCommentById = asynchandler(async (req, res) => {
 });
 
 const getCommentByVideo = asynchandler(async (req, res) => {
-  //TODO CREATE THE RETRIEVE BY VIDEO
   const { videoId } = req.params;
 
   if (!videoId) {
@@ -96,7 +93,6 @@ const getCommentByVideo = asynchandler(async (req, res) => {
 });
 
 const updateComment = asynchandler(async (req, res) => {
-  //TODO CREATE THE UPDATION IN THE COMMENT
   const { id } = req.params;
   const newComment = req.body;
 
@@ -135,7 +131,6 @@ const updateComment = asynchandler(async (req, res) => {
 });
 
 const deleteComment = asynchandler(async (req, res) => {
-  //TODO CREATE THE DELETION OF THE COMMENT
   const { id } = req.params;
 
   if (!id) {

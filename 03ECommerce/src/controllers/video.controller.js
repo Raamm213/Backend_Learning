@@ -105,7 +105,7 @@ const updateVideo = asynchandler(async (req, res) => {
 
   const vid = await Video.findByIdAndUpdate(id, req.body, {
     new: true,
-  }).populate('owner', 'username email'); //TODO HAVE TO MARK THE UPDATE THINGS IN THE PARANTESIS
+  }).populate('owner', 'username email'); 
 
   if (!vid) {
     throw new apiError(400, 'nothing such video exists');
@@ -174,7 +174,7 @@ const incrementViews = asynchandler(async (req, res) => {
   const vid = await Video.findByIdAndUpdate(id,{$inc: {views:1}},{new:true}).populate("owner","username email");
 
   return res.status(200).json(new apiResponse(200, vid,  'watching the video'));
-}); //TODO HAVE OT COMPLETE THIS
+}); 
 
 export {
   createVideo,
